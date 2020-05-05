@@ -2,8 +2,21 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:View"
-             StartupUri="MainWindow.xaml">
+             xmlns:windows="clr-namespace:View.Windows"
+             xmlns:sounds="clr-namespace:View.Sounds"
+             xmlns:viewmodel ="clr-namespace:ViewModel;assembly=ViewModel">
     <Application.Resources>
+        
+        <DataTemplate DataType="{x:Type viewmodel:PuzzleVM}">
+            <windows:Game />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodel:SelectionScreenVM}">
+            <windows:SelectionScreen />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodel:GameChoiceVM}">
+            <windows:GameChoice />
+        </DataTemplate>
+       
          
     </Application.Resources>
 </Application>
